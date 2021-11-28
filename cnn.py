@@ -7,7 +7,7 @@ from tensorflow.keras.layers import Conv2D,MaxPool2D,Dropout,Flatten,Dense
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.callbacks import EarlyStopping
 
-path = '<Path of val images>'
+path = '<Path of train images>'
 data_gen=ImageDataGenerator(rescale=1/255.0,validation_split=0.2)
 train_gen=data_gen.flow_from_directory(directory=path,target_size=(50,50),class_mode='binary',batch_size=16,subset='training')
 val_gen=data_gen.flow_from_directory(directory=path,target_size=(50,50),class_mode='binary',batch_size=16,subset='validation')
